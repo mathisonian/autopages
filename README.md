@@ -23,7 +23,7 @@ would be the code and readme (you can choose to display -- perhaps just the read
 
 ### transformation branch
 
-This looks like a static client side website. In gereral it should follow this folder structure
+This looks like a static client side website. It should follow this folder structure
 
 ```
 $ tree
@@ -84,7 +84,7 @@ it knows where to tell github to point a new webhook to.
 
 ## Documentation
 
-More documentation coming soon. In the meantime feel free to contact the author. _(Coming soon)_
+More documentation coming soon. In the meantime feel free to contact the author.
 
 
 
