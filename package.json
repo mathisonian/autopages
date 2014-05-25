@@ -1,0 +1,38 @@
+{
+  "name": "autopages",
+  "version": "0.0.0",
+  "main": "lib/autopages.js",
+  "description": "Automated compilation and deployment to gh-pages",
+  "homepage": "http://github.com/mathisonian/autopages",
+  "bugs": "https://github.com/mathisonian/autopages/issues",
+  "author": {
+    "name": "Matthew Conlen",
+    "email": "code@mathisonian.com",
+    "url": "http://mathisonian.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathisonian/autopages"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "q": "~1.0.1",
+    "lodash": "~2.4.1",
+    "express": "~4.3.1",
+    "octonode": "~0.6.2",
+    "gift": "~0.4.1",
+    "fs-extra": "~0.9.1",
+    "gulp-jade": "~0.5.0",
+    "gulp-csso": "~0.2.8",
+    "gulp-sass": "~0.7.1",
+    "gulp": "~3.6.2",
+    "gulp-util": "~2.2.14",
+    "gulp-uglify": "~0.3.0",
+    "gulp-browserify": "~0.5.0",
+    "gulp-tap": "~0.1.1"
+  }
+}
