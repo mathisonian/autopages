@@ -9,6 +9,7 @@ head
 
 body
     block content
-        .content
-            !{autopages.parseMarkdown('README.md')}
+        .container
+            .sixteen.columns
+                !{autopages.parseMarkdown('README.md')}
 
