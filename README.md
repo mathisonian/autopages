@@ -126,6 +126,14 @@ Please submit a PR if you publish a plugin
 * [autopages-browserify](https://github.com/mathisonian/autopages-browserify)
 
 
+## Examples
+
+Here are examples of github repositories that take advantage of autopages, and the servers that power them.
+
+* White Film [website](https://github.com/white-film/white-film.github.io)
+    * powered by [this autopages implementation](https://github.com/white-film/wf-autopages)
+
+
 ## Documentation
 
 More documentation coming soon. In the meantime feel free to contact the author.
