@@ -130,6 +130,8 @@ Please submit a PR if you publish a plugin
 
 Here are examples of github repositories that take advantage of autopages, and the servers that power them.
 
+* This repository :)
+    * every time the `master` or `autopages` branch is updated, the `gh-pages` branch is redeployed automatically
 * White Film [website](https://github.com/white-film/white-film.github.io)
     * powered by [this autopages implementation](https://github.com/white-film/wf-autopages)
 
