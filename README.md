@@ -46,7 +46,7 @@ although can be significantly more complex than this. This is discussed later.
 This is where the compiled static site go. Autopages will automatically commit and push this branch back to github 
 every time there is a new commit on the input branch or the transformation branch.
 
-#### <username>.github.io repos
+#### \<username\>.github.io repos
 
 For repos in the `<username>.github.io` style, the following branch name conventions are enforced:
 
@@ -54,7 +54,7 @@ For repos in the `<username>.github.io` style, the following branch name convent
 * transformation branch: `autopages`
 * output branch: `master`
 
-### all other repos
+#### all other repos
 
 Any other repos will follow the convention of
 
