@@ -1,0 +1,12 @@
+doctype html
+html(xmlns='http://www.w3.org/1999/xhtml')
+head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    title
+        block title
+            | autopages
+    link(rel='stylesheet', href='/css/app.css', type='text/css', media='screen')
+
+body
+    block content
+        .content!= autopages.parseMarkdown(files['README.md'])
