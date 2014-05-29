@@ -9,4 +9,5 @@ head
 
 body
     block content
-        .content!= autopages.parseMarkdown('README.md')
+        .content
+            !{autopages.parseMarkdown('README.md')}
