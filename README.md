@@ -75,12 +75,56 @@ var Autopages = require('autopages');
 // it must have access to repos and webhooks
 var autopages = new Autopages('GITHUB_API_KEY'); 
 
-autopages.registerRepo('username/repo');
+autopages
+    .register('username/repo') // adds a webhook to the repo and listens for commit events
+    .then(function(processor) {
+        processor.use(/* use autopages plugins here */);
+    });
 
 ```
 
 Thats it. Then, deploy it to heroku, and on heroku set the environmental variable `URL` so that
 it knows where to tell github to point a new webhook to.
+
+
+## Support
+
+Out of the box autopages works with the following stack
+
+* jade templates
+* scss stylesheets
+* vanilla javascript
+
+and will handle deploying custom fonts and images as well. If you want to use
+different software, this can be acheived through plugins.
+
+### Plugins
+
+Anyone can write a plugin for autopages. For example, see [https://github.com/mathisonian/autopages-browserify](https://github.com/mathisonian/autopages-browserify).
+
+Plugins are based on gulp tasks, and are expected to be in the format like this:
+
+
+```
+
+processor.use({
+    GULP_TASK_NAME: function(inputPath, outputPath) {
+
+        return /* return the gulp task here.*/
+
+    }
+});
+
+```
+
+autopages will handle passing in the correct input and output paths to your function.
+
+#### Available Plugins
+
+Please submit a PR if you publish a plugin
+
+* [autopages-browserify](https://github.com/mathisonian/autopages-browserify)
+
 
 ## Documentation
 
