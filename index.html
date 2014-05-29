@@ -1,0 +1,102 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"></html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>autopages</title><link rel="stylesheet" href="/css/app.css" type="text/css" media="screen"></head><body><div class="content"><h1 id="autopages">autopages</h1>
+<p>Automated compilation and deployment to gh-pages</p>
+<h2 id="about">About</h2>
+<p>This project is meant to be self hosted on Heroku or similar, so that you maintain control over
+who has push access to your repositories.</p>
+<p>In general it assumes convention over configuration to make the setup process as painless as possible.</p>
+<p>There are two types of github pages repositories. For each of them it assumes that three branches exist:</p>
+<ul>
+<li>input branch</li>
+<li>tranformation branch</li>
+<li>output branch</li>
+</ul>
+<h3 id="input-branch">input branch</h3>
+<p>This is dynamic content that is going to be displayed on your github pages. For example,
+if your project is a blog, it would include blog posts. If it is a software library, it
+would be the code and readme (you can choose to display -- perhaps just the readme -- in the tranformation branch).</p>
+<h3 id="transformation-branch">transformation branch</h3>
+<p>This looks like a static client side website. It should follow this folder structure</p>
+<pre><code>$ tree
+.
+├── images
+│   └── logo.png
+├── js
+│   └── app.js
+├── stylesheets
+│   └── app.scss
+└── templates
+    └── index.jade
+</code></pre><p>although can be significantly more complex than this. This is discussed later.</p>
+<h3 id="output-branch">output branch</h3>
+<p>This is where the compiled static site go. Autopages will automatically commit and push this branch back to github 
+every time there is a new commit on the input branch or the transformation branch.</p>
+<h4 id="-username-github-io-repos">\<username\>.github.io repos</h4>
+<p>For repos in the <code>&lt;username&gt;.github.io</code> style, the following branch name conventions are enforced:</p>
+<ul>
+<li>input branch: <code>ap-content</code></li>
+<li>transformation branch: <code>autopages</code></li>
+<li>output branch: <code>master</code></li>
+</ul>
+<h4 id="all-other-repos">all other repos</h4>
+<p>Any other repos will follow the convention of</p>
+<ul>
+<li>input branch: <code>master</code></li>
+<li>transformation branch: <code>autopages</code></li>
+<li>output branch: <code>gh-pages</code></li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>Install the module with: <code>npm install autopages</code>. You can create a new repo for this and in the main file write</p>
+<pre><code class="lang-javascript">
+var Autopages = require(&#39;autopages&#39;);
+
+// be sure to replace this with your own api key. 
+// it must have access to repos and webhooks
+var autopages = new Autopages(&#39;GITHUB_API_KEY&#39;); 
+
+autopages
+    .register(&#39;username/repo&#39;) // adds a webhook to the repo and listens for commit events
+    .then(function(processor) {
+        processor.use(/* use autopages plugins here */);
+    });
+</code></pre>
+<p>Thats it. Then, deploy it to heroku, and on heroku set the environmental variable <code>URL</code> so that
+it knows where to tell github to point a new webhook to.</p>
+<h2 id="support">Support</h2>
+<p>Out of the box autopages works with the following stack</p>
+<ul>
+<li>jade templates</li>
+<li>scss stylesheets</li>
+<li>vanilla javascript</li>
+</ul>
+<p>and will handle deploying custom fonts and images as well. If you want to use
+different software, this can be acheived through plugins.</p>
+<h3 id="plugins">Plugins</h3>
+<p>Anyone can write a plugin for autopages. For example, see <a href="https://github.com/mathisonian/autopages-browserify">https://github.com/mathisonian/autopages-browserify</a>.</p>
+<p>Plugins are based on gulp tasks, and are expected to be in the format like this:</p>
+<pre><code>
+processor.use({
+    GULP_TASK_NAME: function(inputPath, outputPath) {
+
+        return /* return the gulp task here.*/
+
+    }
+});
+</code></pre><p>autopages will handle passing in the correct input and output paths to your function.</p>
+<h4 id="available-plugins">Available Plugins</h4>
+<p>Please submit a PR if you publish a plugin</p>
+<ul>
+<li><a href="https://github.com/mathisonian/autopages-browserify">autopages-browserify</a></li>
+</ul>
+<h2 id="examples">Examples</h2>
+<p>Here are examples of github repositories that take advantage of autopages, and the servers that power them.</p>
+<ul>
+<li>White Film <a href="https://github.com/white-film/white-film.github.io">website</a><ul>
+<li>powered by <a href="https://github.com/white-film/wf-autopages">this autopages implementation</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<p>More documentation coming soon. In the meantime feel free to contact the author.</p>
+<h2 id="license">License</h2>
+<p>Copyright (c) 2014 Matthew Conlen. Licensed under the MIT license.</p>
+</div></body>
