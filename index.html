@@ -8,6 +8,7 @@
 <li>The templates are stored in the <a href="https://github.com/mathisonian/autopages/tree/autopages">autopages branch</a></li>
 <li>This <a href="https://github.com/mathisonian/autopages/blob/autopages/templates/index.jade#L14">line</a> in <code>index.jade</code> tells autopages to parse the most recent readme file on each commit</li>
 <li>The files are compiled and output to the <code>gh-pages</code> branch, which is hosted at <a href="http://mathisonian.github.io/autopages/">http://mathisonian.github.io/autopages/</a></li>
+<li>using <a href="https://github.com/mathisonian/mathisonian-autopages">this server</a></li>
 </ul>
 </li>
 <li>White Film <a href="https://github.com/white-film/white-film.github.io">website</a><ul>
@@ -62,6 +63,9 @@ every time there is a new commit on the input branch or the transformation branc
 <li>output branch: <code>gh-pages</code></li>
 </ul>
 <h2 id="usage">Usage</h2>
+<h3 id="short-version">short version</h3>
+<p>fork <a href="https://github.com/mathisonian/mathisonian-autopages">mathisonian-autopages</a> and update it to watch your repositories.</p>
+<h3 id="longer-version">longer version</h3>
 <p>Install the module with: <code>npm install autopages</code>. You can create a new repo for this and in the main file write</p>
 <pre><code class="lang-javascript">
 var Autopages = require(&#39;autopages&#39;);
