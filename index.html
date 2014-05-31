@@ -1,5 +1,22 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"></html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>autopages</title><link rel="stylesheet" href="./css/app.css" type="text/css" media="screen"></head><body><div class="container"><div class="sixteen columns"><h1 id="autopages">autopages</h1>
 <p>Automated compilation and deployment to gh-pages</p>
+<h2 id="examples">Examples</h2>
+<p>Here are examples of github repositories that take advantage of autopages, and the servers that power them.</p>
+<ul>
+<li>This repository :)<ul>
+<li>every time the <code>master</code> or <code>autopages</code> branch is updated, the <code>gh-pages</code> branch is redeployed automatically</li>
+<li>The templates are stored in the <a href="https://github.com/mathisonian/autopages/tree/autopages">autopages branch</a></li>
+<li>This <a href="https://github.com/mathisonian/autopages/blob/autopages/templates/index.jade#L14">line</a> in <code>index.jade</code> tells autopages to parse the most recent readme file on each commit</li>
+<li>The files are compiled and output to the <code>gh-pages</code> branch, which is hosted at <a href="http://mathisonian.github.io/autopages/">http://mathisonian.github.io/autopages/</a></li>
+</ul>
+</li>
+<li>White Film <a href="https://github.com/white-film/white-film.github.io">website</a><ul>
+<li>powered by <a href="https://github.com/white-film/wf-autopages">this autopages implementation</a></li>
+<li>Uses autopages as a lightweight cms, for example, all the <a href="https://github.com/white-film/white-film.github.io/tree/ap-content">films</a> in the <code>ap-content</code> branch are parsed and inserted into the final html files. </li>
+<li>Output to white-film.github.io</li>
+</ul>
+</li>
+</ul>
 <h2 id="about">About</h2>
 <p>This project is meant to be self hosted on Heroku or similar, so that you maintain control over
 who has push access to your repositories.</p>
@@ -86,18 +103,6 @@ processor.use({
 <p>Please submit a PR if you publish a plugin</p>
 <ul>
 <li><a href="https://github.com/mathisonian/autopages-browserify">autopages-browserify</a></li>
-</ul>
-<h2 id="examples">Examples</h2>
-<p>Here are examples of github repositories that take advantage of autopages, and the servers that power them.</p>
-<ul>
-<li>This repository :)<ul>
-<li>every time the <code>master</code> or <code>autopages</code> branch is updated, the <code>gh-pages</code> branch is redeployed automatically</li>
-</ul>
-</li>
-<li>White Film <a href="https://github.com/white-film/white-film.github.io">website</a><ul>
-<li>powered by <a href="https://github.com/white-film/wf-autopages">this autopages implementation</a></li>
-</ul>
-</li>
 </ul>
 <h2 id="documentation">Documentation</h2>
 <p>More documentation coming soon. In the meantime feel free to contact the author.</p>
