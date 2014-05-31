@@ -11,6 +11,7 @@ Here are examples of github repositories that take advantage of autopages, and t
     * The templates are stored in the [autopages branch](https://github.com/mathisonian/autopages/tree/autopages)
     * This [line](https://github.com/mathisonian/autopages/blob/autopages/templates/index.jade#L14) in `index.jade` tells autopages to parse the most recent readme file on each commit
     * The files are compiled and output to the `gh-pages` branch, which is hosted at http://mathisonian.github.io/autopages/
+    * using [this server](https://github.com/mathisonian/mathisonian-autopages)
 * White Film [website](https://github.com/white-film/white-film.github.io)
     * powered by [this autopages implementation](https://github.com/white-film/wf-autopages)
     * Uses autopages as a lightweight cms, for example, all the [films](https://github.com/white-film/white-film.github.io/tree/ap-content) in the `ap-content` branch are parsed and inserted into the final html files. 
@@ -79,6 +80,12 @@ Any other repos will follow the convention of
 * output branch: `gh-pages`
 
 ## Usage
+
+### short version
+
+fork [mathisonian-autopages](https://github.com/mathisonian/mathisonian-autopages) and update it to watch your repositories.
+
+### longer version
 
 Install the module with: `npm install autopages`. You can create a new repo for this and in the main file write
 
