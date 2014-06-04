@@ -1,6 +1,6 @@
 {
   "name": "autopages",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "main": "lib/autopages.js",
   "description": "Automated compilation and deployment to gh-pages",
   "homepage": "http://github.com/mathisonian/autopages",
