@@ -2,6 +2,8 @@
 
 Automated compilation and deployment to gh-pages
 
+![gif example](http://i.imgur.com/OaB12F9.gif)
+
 ## Examples
 
 Here are examples of github repositories that take advantage of autopages, and the servers that power them.
